@@ -13,5 +13,6 @@ namespace TrapTheCat.Grid
         public float CellSpacing;
         public bool IsZigZag;
         public CellView CellViewPrefab;
+        public int BlockedCellCount;
     }
 }

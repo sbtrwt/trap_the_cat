@@ -19,3 +19,4 @@ MonoBehaviour:
   CellSpacing: 0.1
   IsZigZag: 0
   CellViewPrefab: {fileID: 56103367889145744, guid: f3b9658a1b3a4b44ca738571b50e883b, type: 3}
+  BlockedCellCount: 15

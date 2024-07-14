@@ -7,11 +7,15 @@ namespace TrapTheCat.Grid.Cell
     public class CellView : MonoBehaviour
     {
         private CellController controller;
-        private SpriteRenderer spriteRenderer;
+        [SerializeField]private SpriteRenderer spriteRenderer;
         public void SetController(CellController controller)
         {
             this.controller = controller;
         }
         public void SetColor(Color colortToSet) => spriteRenderer.color = colortToSet;
+        void OnMouseDown()
+        {
+            controller.Block();
+        }
     }
 }

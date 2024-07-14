@@ -14,6 +14,9 @@ namespace TrapTheCat
 
         [SerializeField] private GridSO gridSO;
         [SerializeField] private CatView catViewPrefab;
+
+        [SerializeField] private UIService uiService;
+        public UIService UIService => uiService;
         private void Start()
         {
             InitializeServices();
@@ -30,14 +33,15 @@ namespace TrapTheCat
         }
         private void InjectDependencies()
         {
-            catService.Init(eventService, gridService);
+            gridService.Init(eventService);
+            catService.Init(eventService, gridService, uiService);
         }
 
         private void SetCameraPosition()
         {
             float totalWidth = gridSO.GridColumn * (gridSO.CellSize + gridSO.CellSpacing);
             float totalHeight = gridSO.GridRow * (gridSO.CellSize + gridSO.CellSpacing);
-            //Camera.main.transform.position = new Vector3(totalWidth / 2, totalHeight / 2, -10.0f);
+          
 
             float smallerValue = Mathf.Max(totalWidth, totalHeight);
             Camera.main.orthographicSize = smallerValue * 0.6f;
