@@ -177,12 +177,13 @@ namespace TrapTheCat.Cat
         {
             if (HasEscaped())
             {
-                uiService.SetGameText("Cat Escaped! You Lose!");
-                
+                uiService.SetGameText("Meow....Ahh!! Cat Escaped! You Lose!");
+                eventService.OnGameOver.InvokeEvent(true);
             }
             else if (IsTrapped())
             {
                 uiService.SetGameText("Cat Trapped! You Win!");
+                eventService.OnGameOver.InvokeEvent(true);
             }
         }
         ~CatService()

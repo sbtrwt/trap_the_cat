@@ -21,9 +21,12 @@ namespace TrapTheCat.Grid.Cell
       
         public void Block()
         {
-            IsBlocked = true;
-            cellView.SetColor(Color.blue);
-            eventService.OnBlockCell.InvokeEvent(gridPosition);
+            if (!IsBlocked)
+            {
+                IsBlocked = true;
+                cellView.SetColor(Color.blue);
+                eventService.OnBlockCell.InvokeEvent(gridPosition);
+            }
         }
         public void SetGridPosition(Vector2Int positionToSet) => gridPosition = positionToSet;
         public Vector2Int GetGridPosition() => gridPosition;

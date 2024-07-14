@@ -35,6 +35,7 @@ namespace TrapTheCat
         {
             gridService.Init(eventService);
             catService.Init(eventService, gridService, uiService);
+            UIService.Init(eventService);
         }
 
         private void SetCameraPosition()

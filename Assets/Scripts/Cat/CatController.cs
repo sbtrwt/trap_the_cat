@@ -24,15 +24,10 @@ namespace TrapTheCat.Cat
         {
             this.eventService = eventService;
             this.gridService = gridService;
-            SubscriveEvents();
         }
-        private void SubscriveEvents()
-        {
-           
-        }
+      
         public void SetPosition(Vector3 positionToSet)
         {
-            //catView.transform.position = positionToSet;
           
             targetPosition = positionToSet;
             isMoving = true;

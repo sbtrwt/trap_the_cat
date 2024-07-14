@@ -19,7 +19,7 @@ namespace TrapTheCat.Grid
             this.gridSO = gridSO;
             this.eventService = eventService;
             InitializeGrid();
-            SubscibeEvents();
+        
             PreBlockRandomCells(gridSO.BlockedCellCount);
         }
      
@@ -68,14 +68,7 @@ namespace TrapTheCat.Grid
         {
             return grid[gridPosition.x, gridPosition.y].GetPosition();
         }
-        private void SubscibeEvents()
-        {
-            eventService.OnBlockCell.AddListener(OnGridCellClick);
-        }
-        public void OnGridCellClick(Vector2Int gridPosition)
-        {
-
-        }
+      
 
         public bool IsCellBlocked(int x, int y)
         {
